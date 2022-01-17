@@ -71,7 +71,7 @@
           </li>
         </ol>
 
-        <button class="btn">Start New Game</button>
+        <button class="btn" id="start-game-btn">Start New Game</button>
       </section>
 
       <section id="active-game">
@@ -80,20 +80,20 @@
           <p>Click start new game above to start a new game</p>
         </article>
 
-        <p>It is your turn <span id="active-player-name">PLAYERNAME</span>!</p>
+        <p>It is your turn <span id="active-player">PLAYERNAME</span>!</p>
 
         <ol id="game-board">
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="1"></li>
+          <li data-col="2" data-row="1"></li>
+          <li data-col="3" data-row="1"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="2"></li>
+          <li data-col="2" data-row="2"></li>
+          <li data-col="3" data-row="2"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="3"></li>
+          <li data-col="2" data-row="3"></li>
+          <li data-col="3" data-row="3"></li>
         </ol>
       </section>
     </main>
