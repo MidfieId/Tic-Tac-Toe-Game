@@ -127,6 +127,6 @@ function endGame(winnerId) {
       winnerName;
   } else {
     gameOverElement.firstElementChild.innerHTML =
-    '<h3>Game Over!<span id="winner-name"> It\'s a draw!</span></h3>'
+    '<h3>Game Over!<span id="winner-name"> It\'s a draw!</span></h3>';
   }
 }
