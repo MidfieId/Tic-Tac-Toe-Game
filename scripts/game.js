@@ -1,25 +1,26 @@
 // Edit functionality to stop alerts and clicks after game has been over
 
-function resetGameStatus (){
-    gameIsOver = false;
-    activePlayer = 0;
-    currentRound = 0;
-    gameOverElement.firstElementChild.innerHTML = 'you won, <span id="winner-name">PLAYERNAME</span>!';
-    gameOverElement.style.display = 'none';
+function resetGameStatus() {
+  gameIsOver = false;
+  activePlayer = 0;
+  currentRound = 1;
+  gameOverElement.firstElementChild.innerHTML =
+    'you won, <span id="winner-name">PLAYERNAME</span>!';
+  gameOverElement.style.display = "none";
 
-    let gameBoardElementIndex = 0;
-    for (let i = 0; i<3 ;i++){
-        for(let j = 0; j<3 ; j++){
-          gameData[i][j] = 0;
-          gameBoardElement.children[gameBoardElementIndex].textContent = '';
-          
-          gameBoardElement.children[gameBoardElementIndex].classList.remove('disabled');        
-          gameBoardElementIndex++;
+  let gameBoardElementIndex = 0;
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      gameData[i][j] = 0;
+      gameBoardElement.children[gameBoardElementIndex].textContent = "";
 
-        }
+      gameBoardElement.children[gameBoardElementIndex].classList.remove(
+        "disabled"
+      );
+      gameBoardElementIndex++;
     }
+  }
 }
-
 
 function startNewGame() {
   if (players[0].name === "" || players[1].name === "") {
@@ -43,7 +44,6 @@ function switchPlayer() {
 
 function selectGameField(event) {
   if (event.target.tagName !== "LI" || gameIsOver) {
-    
     return;
   }
   const selectedField = event.target;
@@ -57,16 +57,17 @@ function selectGameField(event) {
 
   selectedField.textContent = players[activePlayer].symbol;
   selectedField.classList.add("disabled");
-  
 
   gameData[selectedRow][selectedCol] = activePlayer + 1;
   const winnerId = checkForGameOver();
+  console.log(winnerId);
   if (winnerId != 0) {
     endGame(winnerId);
   }
 
-  currentRound++;
   switchPlayer();
+  currentRound++;
+  
 }
 
 function checkForGameOver() {
@@ -119,13 +120,13 @@ function checkForGameOver() {
 function endGame(winnerId) {
   gameIsOver = true;
   gameOverElement.style.display = "block";
-  
+
   if (winnerId > 0) {
     const winnerName = players[winnerId - 1].name;
     gameOverElement.firstElementChild.firstElementChild.textContent =
       winnerName;
   } else {
     gameOverElement.firstElementChild.firstElementChild.textContent =
-      " it's a draw!";
+      "it's a draw";
   }
 }
