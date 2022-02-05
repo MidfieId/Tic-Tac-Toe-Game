@@ -22,6 +22,7 @@ const players = [
 
 ];
 
+const darkModeButton = document.getElementById('dark-mode-button');
 const startGameBtnElement = document.getElementById('start-game-btn');
 const playerConfigOverlayElement = document.getElementById('config-overlay');
 const backdropElement = document.getElementById('backdrop');
@@ -42,6 +43,7 @@ const errrorsOutputElement = document.getElementById('config-errors');
 
 startGameBtnElement.addEventListener('click', startNewGame)
 
+darkModeButton.addEventListener('click',darkModeOn);
 editPlayer1Btn.addEventListener('click',openPlayerConfig);
 editPlayer2Btn.addEventListener('click',openPlayerConfig);
 cancelConfigBtnElement.addEventListener('click',closePlayerConfig);

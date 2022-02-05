@@ -1,8 +1,17 @@
+/* for dark mode purposes  */
 body {
   margin: 0;
   font-family: sans-serif;
+  
+}
+
+.light-mode {
   color: rgb(44, 41, 44);
   background-color: rgb(247, 239, 247);
+}
+
+.dark-mode {
+  background-color: black;
 }
 
 #main-header {

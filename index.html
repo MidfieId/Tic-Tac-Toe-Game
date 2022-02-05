@@ -14,11 +14,12 @@
     <script src="scripts/app.js" defer></script>
   </head>
 
-  <body>
+  <body class="light-mode" id="dark-mode-ref">
     <div id="backdrop"></div>
     <header id="main-header">
       <h1>Play Tic-Tac-Toe!</h1>
-      <p>Built with HTML , CSS and Javascript!</p>
+      <p>Built with HTML, CSS and Javascript!</p>
+      <button id="dark-mode-button" class="theme-button"><img class="dark-mode-button" src="./assets/dark-mode.png" alt="dark-mode"></button>
     </header>
 
     <main>
@@ -40,7 +41,7 @@
       </aside>
       <section id="game-config">
         <ol>
-          <li>
+          <li >
             <article id="player-1-data">
               <h2>Player 1</h2>
               <h3>Player Name</h3>
@@ -55,7 +56,7 @@
             </article>
           </li>
 
-          <li>
+          <li >
             <article id="player-2-data">
               <h2>Player 2</h2>
               <h3>Player Name</h3>
@@ -80,7 +81,7 @@
           <p>Click start new game above to start a new game</p>
         </article>
 
-        <p>It is your turn <span id="active-player">PLAYERNAME</span>!</p>
+        <p class="active-player">It is your turn <span id="active-player">PLAYERNAME</span>!</p>
 
         <ol id="game-board">
           <li data-col="1" data-row="1"></li>
